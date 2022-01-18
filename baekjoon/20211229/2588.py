@@ -1,0 +1,11 @@
+a = input()
+b = input()
+
+# (3)
+print(int(a) * int(b[-1]))
+# (4)
+print(int(a) * int(b[-2]))
+# (5)
+print(int(a) * int(b[-3]))
+# (6)
+print(int(a) * int(b))
