@@ -1,4 +1,5 @@
-# 0129
+# 0129, 0131
+
 # A 물고기 크기
 # B 물고기 이동 방향(0은 위로, 1은 아래로)
 # 두 물고기가 마주쳤을 때 크기가 더 큰 물고기가 살아남음
@@ -53,3 +54,41 @@ def solution(A, B):
             down.append(A[i])
 
     return answer
+
+# 3 -> 25%
+def solution(A, B):
+    length = len(A)
+    fishes = [] # (index, size, direction)
+    for i in range(length):
+        if not fishes:
+            fishes.append((i, A[i], B[i]))
+
+        elif B[i] == 0:
+            if fishes[-1][2] == 1:
+                if fishes[-1][1] < A[i]:
+                    fishes.pop()
+                    fishes.append((i, A[i], B[i]))
+        elif B[i] == 1:
+            fishes.append((i, A[i], B[i]))
+    
+
+    return len(fishes)
+
+# 4 -> 37%
+def solution(A, B):
+    length = len(A)
+    fishes = [(0, A[0], B[0])] # (index, size, direction)
+    for i in range(1, length):
+        if B[i] == 0:
+            if fishes[-1][2] == 1:
+                if fishes[-1][1] < A[i]:
+                    fishes.pop()
+                    fishes.append((i, A[i], B[i]))
+            else:
+                fishes.append((i, A[i], B[i]))
+                    
+        elif B[i] == 1:
+            fishes.append((i, A[i], B[i]))
+
+
+    return len(fishes)
