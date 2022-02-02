@@ -18,4 +18,7 @@
 
     https://programmers.co.kr/learn/challenges
 
+    - v1 코테 맛보기
+    - v2 IDE 사용하지 않고 문제 풀기 & SQL
+
 
