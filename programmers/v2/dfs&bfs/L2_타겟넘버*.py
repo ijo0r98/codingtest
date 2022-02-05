@@ -22,3 +22,24 @@ def dfs(sum, nums, target):
     except:
         print(sum, nums, target)
     
+
+
+# 2 다시 풀어도 어려움..
+def dfs(k, target, numbers):
+    answer = 0
+    try:
+        if not numbers:
+            if k == target:
+                return 1
+            else:
+                return 0
+
+        answer += dfs(k + numbers[0], target, numbers[1:])
+        answer += dfs(k - numbers[0], target, numbers[1:])
+        return answer
+    
+    except:
+        print(answer, target, numbers)
+
+def solution(numbers, target):
+    return (dfs(numbers[0], target, numbers[1:])) + (dfs(numbers[0]*(-1), target, numbers[1:]))
