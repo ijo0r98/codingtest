@@ -1,18 +1,5 @@
 # DFS/BFS > 단지번호 붙이기
 
-# dfs 기본
-def dfs(graph, node):
-    visited = []
-    stack = [node]
-    while stack:
-        node = stack.pop()
-        if node not in visited:
-            visited.append(node)
-            stack.extend(graph[node])
-    return visited
-
-
-
 def dfs_apt(graph):
     stack = [graph[0]]
     visited = [graph[0]]
